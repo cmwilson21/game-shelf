@@ -13,6 +13,14 @@ class PlayersController < ApplicationController
     render json: @player
   end
 
+  def show_current
+    if logged_in?
+      render json: current_player, status: :ok
+    else
+      render json: { errors: ["There is currently no player logged in."] }, status: :bad_request
+    end
+  end
+
   # POST /players
   def create
     @player = Player.new(player_params)

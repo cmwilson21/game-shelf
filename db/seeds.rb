@@ -18,7 +18,6 @@ gats = Player.create(username: "GreatGatsby", password: "imadog")
 
 
 
-
 Game.create(name: "Sonic", genre: "Adventure", console: sega, player: bob)
 Game.create(name: "Tetris", genre: "Puzzle", console: nes, player: court)
 Game.create(name: "Super Mario Bros", genre: "Adventure", console: snes, player: court)
