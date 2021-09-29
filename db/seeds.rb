@@ -7,15 +7,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Seeding database"
 
-Console.create(name: "Sega")
-Console.create(name: "Nintendo")
-Console.create(name: "Super Nintendo")
-Console.create(name: "Nintendo 64")
+sega = Console.create(name: "Sega")
+nes = Console.create(name: "Nintendo")
+snes = Console.create(name: "Super Nintendo")
+n64 = Console.create(name: "Nintendo 64")
 
-Game.create(name: "Sonic", genre: "Adventure")
-Game.create(name: "Tetris", genre: "Puzzle")
-Game.create(name: "Super Mario Bros", genre: "Adventure")
-Game.create(name: "Golden Eye", genre: "Action")
+bob = Player.create(username: "BobBob", password: "alsobob")
+court = Player.create(username: "RecklessReject", password: "password")
+gats = Player.create(username: "GreatGatsby", password: "imadog")
+
+
+
+
+Game.create(name: "Sonic", genre: "Adventure", console: sega, player: bob)
+Game.create(name: "Tetris", genre: "Puzzle", console: nes, player: court)
+Game.create(name: "Super Mario Bros", genre: "Adventure", console: snes, player: court)
+Game.create(name: "Golden Eye", genre: "Action", console: n64, player: gats)
+
+
 
 
 puts "Finished seeding"
