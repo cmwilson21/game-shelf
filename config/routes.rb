@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/me', to: 'players#show_current'
 
-  get '/login', to: 'sessions#create'
+  post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
 
