@@ -1,17 +1,23 @@
 import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import Home from './components/Home'
+import NavBar from './components/NavBar'
+import GameList from './components/GameList';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fHZpZGVvJTIwZ2FtZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"/>
-        <p>
-          Game Shelf
-        </p>
-      </header>
-    </div>
-  );
+    <Router>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/games" render={ (props) => <GameList {...props} /> } />
+
+
+      </Switch>
+    </Router>
+    );
 }
 
 export default App;
